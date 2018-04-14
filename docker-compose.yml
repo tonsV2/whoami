@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  app:
+    image: tons/whoami
+    build: .
+    ports:
+      - 8080:8080
+    networks:
+      - proxy
+    deploy:
+      labels:
+        - "traefik.port=8080"
+        - "traefik.frontend.rule=Host:whoami2.fitfit.dk"
+        - "traefik.backend.loadbalancer.stickiness=true"
+
+networks:
+  proxy:
+    external:
+      name: proxy
