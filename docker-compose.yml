@@ -11,7 +11,7 @@ services:
     deploy:
       labels:
         - "traefik.port=8080"
-        - "traefik.frontend.rule=Host:whoami2.fitfit.dk"
+        - "traefik.frontend.rule=Host:whoami.fitfit.dk"
         - "traefik.backend.loadbalancer.stickiness=true"
 
 networks:
