@@ -22,8 +22,7 @@ class WhoamiController {
         val hostname = InetAddress.getLocalHost().getHostName()
         return return mapOf(
                 "hostname" to hostname,
-                "headers" to headers,
-                "ip" to InetAddress.getLocalHost()
+                "headers" to headers
             )
     }
 }
