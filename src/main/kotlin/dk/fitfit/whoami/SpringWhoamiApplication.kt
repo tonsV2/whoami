@@ -18,11 +18,5 @@ fun main(args: Array<String>) {
 @RestController
 class WhoamiController {
     @GetMapping("/")
-    fun whoami(@RequestHeader headers: HttpHeaders): Map<String, Any>  {
-        val hostname = InetAddress.getLocalHost().getHostName()
-        return return mapOf(
-                "hostname" to hostname,
-                "headers" to headers
-            )
-    }
+    fun whoami() = InetAddress.getLocalHost().getHostName()
 }
