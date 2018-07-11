@@ -2,7 +2,7 @@ version: "3"
 
 services:
   release:
-    image: tons/whoami
+    image: tons/whoami:${TAG}
     build: .
     ports:
       - 8080:8080
