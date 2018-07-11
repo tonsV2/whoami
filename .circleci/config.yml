@@ -6,7 +6,7 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - run: TAG=ci exec /ci/build-push.sh
+      - run: TAG=ci TARGET=release exec /ci/build-push.sh
     working_directory: ~/repo
     environment:
       JVM_OPTS: -Xmx3200m
