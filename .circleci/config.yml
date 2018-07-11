@@ -22,5 +22,6 @@ jobs:
       TERM: dumb
 
     steps:
+      - setup_remote_docker
       - checkout
       - run: TAG=ci exec /ci/build-push.sh

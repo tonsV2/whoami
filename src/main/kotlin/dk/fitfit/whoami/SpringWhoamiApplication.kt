@@ -31,3 +31,34 @@ class WhoamiController {
         throw Exception("shalalala except!")
     }
 }
+
+// https://github.com/traverson/traverson/blob/master/user-guide.markdown#browser
+// https://ethanent.github.io/phin/
+/*
+val http = {
+    constructor(url)
+    get, post, delete, etc
+}
+
+val api = {
+    constructor(url) {
+        http.get(url).then(res => {
+            enhanceObject(res.data)
+        })
+    },
+    private enhanceObject(res) {
+        res.foreach(data => {
+            if data._links
+            links = parseLinks(data._links)
+            self = links.getLink("self")
+            http = http(self)
+            data.get = (rel) => rel ? http.get(rel) : http.get()
+            data.post = (rel) => rel ? http.post(rel) : http.post()
+            data.delete = ...
+            if data is array | object
+                enhanceObject(data)
+        })
+    },
+    private parseLinks(links) {}
+}
+*/
