@@ -6,3 +6,13 @@ services:
     build: .
     ports:
       - 8080:8080
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 8080:8080
+      - ${DEBUG_PORT}:${DEBUG_PORT}
+    environment:
+     - DEBUG_PORT=${DEBUG_PORT}
