@@ -20,7 +20,7 @@ class WhoamiController {
 
     @GetMapping("/")
     fun whoami(): String {
-        logger.info("Whoami request");
-        return InetAddress.getLocalHost().getHostName()
+        logger.info("Whoami request")
+        return InetAddress.getLocalHost().hostName
     }
 }
