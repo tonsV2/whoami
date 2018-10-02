@@ -6,7 +6,6 @@ import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import java.net.InetAddress
-import javax.servlet.http.HttpServletRequest
 
 @SpringBootApplication
 class SpringWhoamiApplication
@@ -23,11 +22,5 @@ class WhoamiController {
     fun whoami(): String {
         logger.info("Whoami request");
         return InetAddress.getLocalHost().getHostName()
-    }
-
-    @GetMapping("/exception")
-    fun whoami(request: HttpServletRequest): String {
-        logger.info("Whoami exception");
-        throw Exception("shalalala except!")
     }
 }
