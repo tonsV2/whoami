@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine as builder
+FROM openjdk:8-jdk-alpine AS builder
 WORKDIR /src
 ADD . /src
 RUN ./gradlew clean assemble
