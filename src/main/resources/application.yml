@@ -1,0 +1,9 @@
+spring:
+  devtools:
+    remote:
+      secret: thisismysecret
+
+server:
+  tomcat:
+    accesslog:
+      enabled: true
