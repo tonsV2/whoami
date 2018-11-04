@@ -13,11 +13,17 @@ buildscript {
     }
 }
 
+plugins {
+    id 'net.researchgate.release' version '2.6.0'
+}
+
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: "kotlin-jpa"
+apply plugin: 'net.researchgate.release'
 
 group = 'dk.fitfit.whoami'
 version = '0.0.1-SNAPSHOT'
