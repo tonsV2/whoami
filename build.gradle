@@ -22,7 +22,6 @@ apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: "kotlin-jpa"
 apply plugin: 'net.researchgate.release'
 
 group = 'dk.fitfit.whoami'
