@@ -17,12 +17,6 @@ plugins {
     id 'net.researchgate.release' version '2.6.0'
 }
 
-release {
-    git {
-        pushReleaseVersionBranch = true
-    }
-}
-
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
