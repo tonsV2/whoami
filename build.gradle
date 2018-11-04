@@ -18,7 +18,9 @@ plugins {
 }
 
 release {
-    pushReleaseVersionBranch = true
+    git {
+        pushReleaseVersionBranch = true
+    }
 }
 
 apply plugin: 'kotlin'
