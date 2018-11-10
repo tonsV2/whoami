@@ -1,0 +1,34 @@
+## Inspired by https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whoami
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: whoami
+  template:
+    metadata:
+      labels:
+        app: whoami
+    spec:
+      containers:
+      - name: whoami
+        image: tons/whoami
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: whoami
