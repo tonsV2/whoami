@@ -28,15 +28,15 @@ spec:
               containerPort: 8080
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /actuator/health
-              port: http
             initialDelaySeconds: 120
-          readinessProbe:
             httpGet:
               path: /actuator/health
               port: http
+          readinessProbe:
             initialDelaySeconds: 130
+            httpGet:
+              path: /actuator/health
+              port: http
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
