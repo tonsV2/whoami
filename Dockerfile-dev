@@ -1,2 +1,0 @@
-FROM tons/whoami
-CMD exec java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n,address=$DEBUG_PORT -jar *.jar

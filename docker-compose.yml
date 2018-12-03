@@ -7,16 +7,6 @@ services:
     ports:
       - 8080:8080
 
-  dev:
-    build:
-      context: .
-      dockerfile: Dockerfile-dev
-    ports:
-      - 8080:8080
-      - ${DEBUG_PORT:-5005}:${DEBUG_PORT:-5005}
-    environment:
-     - DEBUG_PORT=${DEBUG_PORT:-5005}
-
   test:
     image: openjdk:8-jdk-alpine
     working_dir: /src
