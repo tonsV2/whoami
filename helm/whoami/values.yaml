@@ -23,7 +23,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - whoami.fitfit.dk
+    - whoami.dev.cloud.fitfit.dk
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
