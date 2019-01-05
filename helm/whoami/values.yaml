@@ -16,10 +16,27 @@ service:
   type: ClusterIP
   port: 8080
 
+env:
+  - name: SERVER_SERVLET_CONTEXT_PATH
+    value: /whoami
+
+livenessProbe:
+  initialDelaySeconds: 60
+  httpGet:
+    path: /whoami/actuator/health
+    port: http
+
+readinessProbe:
+  initialDelaySeconds: 70
+  httpGet:
+    path: /whoami/actuator/health
+    port: http
+
 ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/rewrite-target: /whoami
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:

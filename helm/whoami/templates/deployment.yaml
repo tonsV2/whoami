@@ -23,20 +23,16 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+{{ toYaml .Values.env | indent 12 }}
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
           livenessProbe:
-            initialDelaySeconds: 120
-            httpGet:
-              path: /actuator/health
-              port: http
+{{ toYaml .Values.livenessProbe | indent 12 }}
           readinessProbe:
-            initialDelaySeconds: 130
-            httpGet:
-              path: /actuator/health
-              port: http
+{{ toYaml .Values.readinessProbe | indent 12 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
