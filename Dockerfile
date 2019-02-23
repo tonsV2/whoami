@@ -1,10 +1,10 @@
-FROM openjdk:8-jdk-alpine AS builder
+FROM openjdk:11-jdk-slim AS builder
 WORKDIR /src
 ADD . /src
 RUN ./gradlew clean assemble
 
-FROM openjdk:8-jre-alpine
-RUN addgroup -S appgroup && adduser -D -H -S appuser -G appgroup -s /sbin/nologin
+FROM openjdk:11-jre-slim
+RUN addgroup --system appgroup && useradd --system --no-create-home -g appgroup appuser
 WORKDIR /app
 COPY --from=builder /src/build/libs/*-0.0.1-SNAPSHOT.jar .
 USER appuser
