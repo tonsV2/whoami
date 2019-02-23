@@ -26,6 +26,9 @@ jib {
         image = "tons/whoami:jib"
         tags = ["jib-" + System.nanoTime()]
     }
+    container {
+        user = "guest"
+    }
 }
 
 apply plugin: 'kotlin'
