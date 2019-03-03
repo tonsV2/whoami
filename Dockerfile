@@ -1,9 +1,9 @@
-FROM openjdk:8-jdk-alpine AS builder
+FROM azul/zulu-openjdk:11 AS builder
 WORKDIR /src
 ADD . /src
 RUN ./gradlew clean assemble
 
-FROM openjdk:8-jre-alpine
+FROM mcr.microsoft.com/java/jre-headless:11u2-zulu-alpine
 RUN addgroup -S appgroup && adduser -D -H -S appuser -G appgroup -s /sbin/nologin
 WORKDIR /app
 COPY --from=builder /src/build/libs/*-0.0.1-SNAPSHOT.jar .
