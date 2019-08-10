@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  whoami:
+  - apiVersion: v1
+    created: "2019-08-10T23:37:38.533963085+02:00"
+    description: A Helm chart for whoami
+    digest: 6467c47c854f556d18c035ada3d0a3dae40bb954e7fd58923062c43fa918097e
+    name: whoami
+    urls:
+    - whoami-0.1.0.tgz
+    version: 0.1.0
+generated: "2019-08-10T23:37:38.532666349+02:00"
